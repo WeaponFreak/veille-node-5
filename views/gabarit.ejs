@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
-<%- include('composants/head') %>
 <body>
-	<%- include('composants/entete') %>
-	<%- include('composants/form_post') %>
-	<%- include('composants/adr') %>
-	<%- include('composants/footer') %>
 	<table class="tableau">
 		<% let noLigne = 0 %>
-		<% for(elm of adresse) { %>
+		<% for(elm of adresse	) { %>
 
 			<% if(noLigne == 0) { %>
 				<tr>
@@ -26,5 +21,10 @@
 			</tr>
 		<% } %>
 	</table>
+		<form action="/ajouter" method="POST">
+		<input type="text" placeholder="nom" name="nom">
+		<input type="text" placeholder="telephone" name="telephone">
+		<button type="submit">Submit</button>
+	</form>
 </body>
 </html>
