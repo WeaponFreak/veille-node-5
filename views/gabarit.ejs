@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
- <meta charset="UTF-8">
- <title>Mon Application</title>
- <link rel="stylesheet" type="text/css" href="../public/css/style.css">
-</head>
+	<%- include('composants/head') %> 
 <body>
- <table class="tableau">
- <% for(elm of adresses) {%>
- <tr>
- <td><%= elm.id %></td>
- <td><%= elm.nom %></td>
- <td><%= elm.telephone %></td>
- </tr>
- <% } %>
- </table>
+	<%- include('composants/entete') %>
+	 <h1>Accueil</h1>
+	 <p>Bienvenue a l'atelier Node.js</p>
+	 <%- include('composants/footer') %>
+ 
 </body>
 </html>
