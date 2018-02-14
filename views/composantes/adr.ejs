@@ -1,41 +1,19 @@
-<%- include('composants/head') %> 
-<body>
- <%- include('composants/entete') %>
- <%- include('composants/form_post') %>
- <%- include('composants/adr') %>
- <%- include('composants/footer') %>
-</body>
-
-
-<script type="text/javascript">
- let elmSauver = document.querySelectorAll('.sauver')
- console.log('elmSauver = ' + elmSauver.length)
- for (elm of elmSauver)
- {
- elm.addEventListener('click', function(){
- /* 
- console.log(this
- .parentNode
- .parentNode
- .children[1].innerHTML)
- */
- let laLigne = this.parentNode.parentNode
- let id = laLigne.children[0].innerHTML
- let nom = laLigne.children[1].innerHTML
- let prenom = laLigne.children[2].innerHTML
- let telephone = laLigne.children[3].innerHTML
-
-let elmForm = document.getElementById('mon_formulaire')
- console.log(elmForm.tagName)
- let elmInput = elmForm.querySelectorAll('input')
- elmInput[0].value = id
- elmInput[1].value = nom
- elmInput[2].value = prenom
- elmInput[3].value = telephone
-
-elmForm.submit()
-
- })
- } 
-</script>
-</html>
+<table class="tableau">
+ <tr>
+ <th><a href='/trier/id/asc'>ID</a></th>
+ <th><a href='/trier/nom/asc'>Nom</a></th> 
+ <th><a href='/trier/prenom/asc'>Prenom</a></th>
+ <th><a href='/trier/telephone/asc'>Telephone</a></th>
+ <th>Ajouter</th> 
+ </tr>
+ <% adresses.forEach(elm => {%>
+ <tr>
+ <td><%= elm._id %></td>
+ <td contenteditable='true'><%= elm.nom %></td>
+ <td contenteditable='true'><%= elm.prenom %></td>
+ <td contenteditable='true'><%= elm.telephone %></td>
+ <td><a href="/delete/<%= elm._id %>">Delete</a></td>
+ <td><a class='sauver' href="#">Sauver</a></td>
+ </tr>
+ <% }) %>
+ </table>
