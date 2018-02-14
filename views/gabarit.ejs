@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <body>
+	<form action="/ajouter" method="POST">
+		<input type="text" placeholder="nom" name="nom">
+		<input type="text" placeholder="telephone" name="telephone">
+		<button type="submit">Submit</button>
+	</form>
 	<table class="tableau">
 		<% let noLigne = 0 %>
 		<% for(elm of adresse	) { %>
@@ -21,10 +26,6 @@
 			</tr>
 		<% } %>
 	</table>
-		<form action="/ajouter" method="POST">
-		<input type="text" placeholder="nom" name="nom">
-		<input type="text" placeholder="telephone" name="telephone">
-		<button type="submit">Submit</button>
-	</form>
+
 </body>
 </html>
